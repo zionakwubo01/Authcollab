@@ -1,13 +1,5 @@
-<<<<<<< HEAD
-import React from 'react'
+import React from "react";
 
-const Login = () => {
-    return (
-        <div>
-
-        </div>
-    )
-=======
 import { AiFillEye } from "react-icons/ai";
 import logo from "../assets/logo.jpg";
 import { LuEyeOff } from "react-icons/lu";
@@ -19,7 +11,6 @@ import { createUser } from "../API/api";
 interface iSubmit {
   email: string;
   password: string;
->>>>>>> 9e98be477483697d1ae2e92f922b9f2faaf28e12
 }
 
 export const Login = () => {
