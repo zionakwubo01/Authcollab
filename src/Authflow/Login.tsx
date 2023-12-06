@@ -34,10 +34,12 @@ export const Login = () => {
     <div>
       <div className="w-full flex flex-col items-center">
         <div className="w-[70%] h-[100px] flex items-center  ">
-          <img src={logo} className="h-[60%]" />
+          <img src={logo} className="h-[30%]" />
         </div>
-        <div className="w-[80%] h-[calc(100vh-100px)] flex flex-col items-center ">
-          <div className="text-[50px] font-bold ">Login</div>
+        <div className="w-[80%] h-[calc(100vh-100px)] mt-10 flex flex-col items-center ">
+          <div className="text-[50px] font-bold text-[40px] font-mono">
+            Login
+          </div>
           <form
             onSubmit={onHandleSubmit}
             className="w-[70%] flex flex-col items-center mt-10 "
@@ -71,10 +73,14 @@ export const Login = () => {
 
               <button
                 type="submit"
-                className="w-full rounded-md border border-red-200 cursor-pointer bg-[#fdf5f2] text-red-500 px-2 py-1 flex justify-center mt-5"
+                className="w-full rounded-md border border-red-200 cursor-pointer bg-[#fdf5f2] text-red-500 px-2 py-1 flex justify-center mt-5 "
               >
                 Continue
               </button>
+
+              <p className="hover:text-red-500 underline cursor-pointer w-full flex justify-center text-[12px]">
+                Forgot Password?
+              </p>
             </div>
           </form>
 
