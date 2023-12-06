@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "https://authdeploy.onrender.com";
+const url = "https://authdeploy.onrender.com/api/v1";
 
 export const createUser = async (data: any) => {
   try {
