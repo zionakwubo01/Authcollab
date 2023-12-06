@@ -5,6 +5,7 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { NavigateFunction, useNavigate } from "react-router-dom";
+import { createUser } from "../API/api";
 interface iSubmit {
   email: string;
   password: string;
@@ -28,6 +29,10 @@ export const Login = () => {
 
   const onHandleSubmit = handleSubmit((data: iSubmit) => {
     console.log(data);
+
+    createUser(data).then(() => {
+      navigate("/home");
+    });
   });
 
   return (
