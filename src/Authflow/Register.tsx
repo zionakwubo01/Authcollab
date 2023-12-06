@@ -22,7 +22,7 @@ const Register = () => {
     const handlesubmitshow = handleSubmit((data: any) => {
         const { userName, password } = data
         createUser({ userName, password }).then((res: any) => {
-
+            localStorage.setItem("user", JSON.stringify(res.data))
         })
     })
 
