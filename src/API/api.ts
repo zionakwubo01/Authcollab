@@ -13,3 +13,13 @@ export const createUser = async (data: any) => {
     console.log(error);
   }
 };
+
+export const signInUser = async (data: any) => {
+  try {
+    return await axios.post(`${url}/signin-user`, data).then((res) => {
+      return res.data;
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
