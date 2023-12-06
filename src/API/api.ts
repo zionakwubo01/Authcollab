@@ -23,3 +23,12 @@ export const signInUser = async (data: any) => {
     console.log(error);
   }
 };
+export const verifyUser = async (data: any) => {
+  try {
+    return await axios.patch(`${url}/verify-user`, data).then((res) => {
+      return res.data;
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
