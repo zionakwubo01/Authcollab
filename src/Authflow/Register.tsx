@@ -1,5 +1,31 @@
-
+import { yupResolver } from "@hookform/resolvers/yup"
+import { useForm } from "react-hook-form"
+import * as yup from "yup"
+import { createUser } from "../API/api"
 const Register = () => {
+
+    const schema = yup.object({
+        userName: yup.string().required("enter your user name"),
+        password: yup.string().required("entervyour password")
+    })
+
+
+    const {
+        reset,
+        register,
+        handleSubmit,
+    } = useForm({
+        resolver: yupResolver(schema)
+    })
+
+
+    const handlesubmitshow = handleSubmit((data: any) => {
+        const { userName, password } = data
+        createUser({ userName, password }).then((res: any) => {
+
+        })
+    })
+
     return (
         <div>
             <div className="w-[100%] h-[100vh] 
