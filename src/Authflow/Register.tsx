@@ -2,6 +2,7 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import { useForm } from "react-hook-form"
 import * as yup from "yup"
 import { createUser } from "../API/api"
+import { FaGoogle } from "react-icons/fa"
 const Register = () => {
 
     const schema = yup.object({
@@ -9,7 +10,6 @@ const Register = () => {
         password: yup.string().required("entervyour password"),
         email: yup.string().email().required("enter your email")
     })
-
 
     const {
         reset,
@@ -24,10 +24,11 @@ const Register = () => {
     const handlesubmitshow = handleSubmit((data: any) => {
         const { userName, password, email } = data
         createUser({ userName, password, email }).then((res: any) => {
-
             console.log(res)
         })
     })
+
+
 
     return (
         <div>
@@ -37,7 +38,7 @@ const Register = () => {
                 <form onSubmit={handlesubmitshow}>
                     <div className="w-[370px] min-h 
                  bg-white flex flex-col items-center justify-center
-                 gap-[20px] border-solid border-[0.5px] border-gray-400
+                 gap-[20px] border-solid border-[0x] border-gray-400
                  rounded-[5px]
                  ">
                         <div className="font-bold text-[40px]
@@ -50,7 +51,8 @@ const Register = () => {
                                 type="text"
                                 placeholder="enter your name"
                                 className="h-[40px] w-[100%] bg-white
-                     rounded-[5px] border-[1px] border-solid border-blue-700
+                     rounded-[5px] border-[1px] border-solid border-gray-400
+                     
 placeholder:pl-[10px] 
                      "
                                 {...register("userName")}
@@ -58,7 +60,7 @@ placeholder:pl-[10px]
                             <input
                                 placeholder="enter password"
                                 className="h-[40px] w-[100%] bg-white
-                     rounded-[5px]  border-[1px] border-solid border-blue-700
+                     rounded-[5px]  border-[1px] border-solid border-gray-400
 placeholder:pl-[10px]
                      "
                                 type="password"
@@ -67,7 +69,7 @@ placeholder:pl-[10px]
                             <input
                                 placeholder="enter email"
                                 className="h-[40px] w-[100%] bg-white
-                     rounded-[5px]  border-[1px] border-solid border-blue-700
+                     rounded-[5px]  border-[1px] border-solid border-gray-400
 placeholder:pl-[10px]
                      "
                                 type="email"
@@ -77,10 +79,15 @@ placeholder:pl-[10px]
                         <button
                             className="w-[350px] h-[40px] bg-white
                         border-[1px] border-solid
-                        border-gray-500 rounded-[5px]
+                        border-gray-300 rounded-[5px]
+                        flex flex-row items-center justify-center gap-[10px]
+                        shadow-[0_2px_8px_rgb(0,0,0,0.2)]
+
                         "
                         >
-                            continue with google
+                            <div className="text-blue-700"><FaGoogle /></div>
+                            <p className="font-bold text-[18px]
+                            "> continue with google</p>
                         </button>
                         <button
                             type="submit"

@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const url = "https://authdeploy.onrender.com/api/v1";
+const url = "https://authdeploy.onrender.com/";
 
 export const createUser = async (data: any) => {
   try {
-    return await axios.post(`${url}/create-user`, data).then((res) => {
+    return await axios.post(`${url}/create-user`, data).then((res: any) => {
       console.log(res.data);
 
       return res.data;

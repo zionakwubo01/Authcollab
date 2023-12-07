@@ -7,7 +7,11 @@
 }
 
 :root {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Playpen Sans', cursive;
   font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
+
   line-height: 1.5;
   font-weight: 500;
 
